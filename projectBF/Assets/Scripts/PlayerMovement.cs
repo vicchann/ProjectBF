@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
-
+{ 
     private float moveInput;
     public float sprintSpeed;
     private float sprint;
     public float moveSpeed;
     public float jumpForce;
-
 
     private Rigidbody2D rb;
 
@@ -58,12 +56,12 @@ public class PlayerMovement : MonoBehaviour
             extraJumps = extraJumpsValue;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && extraJumps > 0)
+        if (Input.GetButtonDown("Jump") && extraJumps > 0)
         {
             rb.velocity = Vector2.up * jumpForce;
             extraJumps--;
         }
-        else if (Input.GetKeyDown(KeyCode.W) && extraJumps == 0 && isGrounded == true)
+        else if (Input.GetButtonDown("Jump") && extraJumps == 0 && isGrounded == true)
         {
             rb.velocity = Vector2.up * jumpForce;
         }
