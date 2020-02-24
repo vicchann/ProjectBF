@@ -41,8 +41,19 @@ public class PlayerMovement : MonoBehaviour
         {
             sprint = 1;
         }
- 
-        moveInput = Input.GetAxisRaw("Horizontal");
+
+        moveInput = 0;
+
+        if (inputManager.GetButton("MoveLeft"))
+        {
+            moveInput = -1;
+        }
+
+         if (inputManager.GetButton("MoveRight"))
+        {
+            moveInput = 1;
+        }
+
         rb.velocity = new Vector2(moveInput * moveSpeed * sprint, rb.velocity.y);
 
     }
@@ -67,3 +78,5 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+
+//        moveInput = Input.GetAxisRaw("Horizontal");

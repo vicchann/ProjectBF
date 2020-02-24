@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
         buttonKeys["MoveLeft"] = KeyCode.A;
         buttonKeys["MoveRight"] = KeyCode.D;
         buttonKeys["Sprint"] = KeyCode.LeftShift;
+        buttonKeys["Pause"] = KeyCode.Escape;
     }
 
     void Update()
