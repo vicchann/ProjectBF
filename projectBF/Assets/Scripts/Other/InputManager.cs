@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,5 +43,21 @@ public class InputManager : MonoBehaviour
         }
 
         return Input.GetKey(buttonKeys[buttonName]);
+    }
+
+    public string[] GetButtonNames()
+    {
+        return buttonKeys.Keys.ToArray();
+    }
+
+    public string GetKeyNameForButton(string buttonName)
+    {
+        if (buttonKeys.ContainsKey(buttonName) == false)
+        {
+            Debug.LogError("InputManager::GetKeyNameForButton -- No button named: " + buttonName);
+            return "N/A";
+        }
+
+        return buttonKeys[buttonName].ToString();
     }
 }
