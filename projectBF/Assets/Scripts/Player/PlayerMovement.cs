@@ -44,12 +44,12 @@ public class PlayerMovement : MonoBehaviour
 
         moveInput = 0;
 
-        if (inputManager.GetButton("MoveLeft"))
+        if (inputManager.GetButton("Left"))
         {
             moveInput = -1;
         }
 
-         if (inputManager.GetButton("MoveRight"))
+         if (inputManager.GetButton("Right"))
         {
             moveInput = 1;
         }
