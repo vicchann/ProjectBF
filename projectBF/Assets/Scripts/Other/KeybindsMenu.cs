@@ -64,7 +64,6 @@ public class KeybindsMenu : MonoBehaviour
     
     void StartRebindFor(string buttonName)
     {
-        Debug.Log("Start rebind for: " + buttonName);
         buttonToRebind = buttonName;
     }
 }

@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject pauseMenu;
+
+    [SerializeField]
+    private GameObject theGame;
+
     private InputManager inputManager;
 
     void Start()
@@ -14,9 +19,24 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (inputManager.GetButtonDown("Pause"))
+        if(inputManager.GetButtonDown("Pause"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            OpenCloseMenu();
+        }
+    }
+
+    public void OpenCloseMenu()
+    {
+        if(pauseMenu.activeInHierarchy == true)
+        {
+            pauseMenu.SetActive(false);
+            theGame.SetActive(true);
+        }
+        else
+        {
+            pauseMenu.SetActive(true);
+            theGame.SetActive(false);
         }
     }
 }
+

@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 {
     Dictionary<string, KeyCode> buttonKeys;
 
-    void OnEnable()
+    void Start()
     {
         buttonKeys = new Dictionary<string, KeyCode>();
 
