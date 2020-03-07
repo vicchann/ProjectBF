@@ -5,19 +5,27 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 { 
     private float moveInput;
+
     public float sprintSpeed;
+
     private float sprint;
+
     public float moveSpeed;
+
     public float jumpForce;
 
     private Rigidbody2D rb;
 
     private bool isGrounded;
+
     public Transform groundCheck;
+
     public float checkRadius;
+
     public LayerMask whatIsGround;
 
     private int extraJumps;
+
     public int extraJumpsValue;
 
     private InputManager inputManager;

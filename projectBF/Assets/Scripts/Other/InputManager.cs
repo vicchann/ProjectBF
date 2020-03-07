@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
         buttonKeys["Down"] = KeyCode.S;
         buttonKeys["Right"] = KeyCode.D;
         buttonKeys["Sprint"] = KeyCode.LeftShift;
-        buttonKeys["Pause"] = KeyCode.Escape;
+        buttonKeys["PauseGame"] = KeyCode.Escape;
     }
 
     public bool GetButtonDown(string buttonName)

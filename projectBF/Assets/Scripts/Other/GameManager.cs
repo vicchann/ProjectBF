@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
     public GameObject pauseMenu;
 
-    [SerializeField]
-    private GameObject theGame;
+    public GameObject mainGame;
 
     private InputManager inputManager;
 
@@ -19,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(inputManager.GetButtonDown("Pause"))
+        if(inputManager.GetButtonDown("PauseGame"))
         {
             OpenCloseMenu();
         }
@@ -30,12 +28,12 @@ public class GameManager : MonoBehaviour
         if(pauseMenu.activeInHierarchy == true)
         {
             pauseMenu.SetActive(false);
-            theGame.SetActive(true);
+            mainGame.SetActive(true);
         }
         else
         {
             pauseMenu.SetActive(true);
-            theGame.SetActive(false);
+            mainGame.SetActive(false);
         }
     }
 }
